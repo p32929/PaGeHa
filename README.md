@@ -1,54 +1,41 @@
 # PaGeHa
 
-Small C programs that generate password **wordlists** — every combination of a given character set, written out to a text file. Old university-era code; the name is short for **Pa**ssword **Ge**nerator.
+Small C programs that make password **wordlists**: every combination of a chosen set of characters, for a length you pick. Old university-era code. The name is short for **Pa**ssword **Ge**nerator.
 
-Each file targets a different character set:
+## The programs
 
-| File | Character set |
-|---|---|
-| `APG(A-Z).c` | Uppercase letters only |
-| `APG (a-z, 0-9).c` | Lowercase letters and digits |
-| `APG(A-Z, a-z, 0-9).c` | Upper, lower and digits |
+Each file uses a different set of characters:
 
-The output is written to text files via `freopen`, so you get a dictionary you can inspect or feed elsewhere.
+| File | Characters | Output |
+|---|---|---|
+| `APG(A-Z).c` | Uppercase letters | Printed on the screen |
+| `APG (a-z, 0-9).c` | Lowercase letters and digits | Written to a text file |
+| `APG(A-Z, a-z, 0-9).c` | Uppercase, lowercase and digits | Written to a text file |
 
-## Prerequisites
-
-A C compiler (`gcc`, `clang`, MinGW — anything).
+Each program asks how many characters you want (1 to 16), then writes out every combination of that length. The two file versions save the list as a `.txt` file in the current folder, for example `1c.txt` for one character.
 
 ## Build and run
+
+You need a C compiler, such as `gcc`, `clang` or MinGW.
 
 ```bash
 gcc "APG (a-z, 0-9).c" -o pageha
 ./pageha
 ```
 
-It writes the generated combinations to `.txt` files in the working directory.
+## Good to know
 
-> These are combinatorial wordlist generators for learning and for your own testing. Only ever use a generated list against systems and accounts you own or are explicitly authorised to test.
+1. The lists grow very fast. Even 6 characters with letters and digits is billions of lines, so start small.
+2. These are for learning and for testing your own systems. Only use a generated list on systems and accounts you own or are allowed to test.
 
 ## Contributing
 
-Contributions are warmly welcomed and greatly appreciated! Whether it's a bug fix, new feature, or improvement, your input helps make this project better for everyone.
-
-Before submitting a pull request, please:
-
-1. Create an issue describing the feature or bug fix you'd like to work on
-2. Wait for discussion and approval to ensure alignment with project goals
-3. Fork the repository and create your feature branch
-4. Submit your pull request with a clear description of changes
-
-This approach helps avoid duplicate efforts and ensures smooth collaboration. Thank you for considering contributing!
+Contributions are very welcome, thank you! Before you start on a pull request, please open an issue and tell me what you would like to add or change. That way we can agree on it first, and your time is not spent on something that might not fit.
 
 ## Share
 
-Sharing this repository with your friends is just one click away from here
+<a href="https://p32929.github.io/share/?repo=PaGeHa"><img src="https://p32929.github.io/readme/share.svg" alt="Share this with your friends in just a click" width="420"></a>
 
-[![facebook](https://user-images.githubusercontent.com/6418354/179013321-ac1d1452-0689-493f-9066-940cf2302b6e.png)](https://www.facebook.com/sharer/sharer.php?u=https://github.com/p32929/PaGeHa/)
-[![twitter](https://user-images.githubusercontent.com/6418354/179013351-7d8d6d1c-4ce2-46ab-bef8-4c4765a1b888.png)](https://twitter.com/intent/tweet?url=https://github.com/p32929/PaGeHa/)
-[![tumblr](https://user-images.githubusercontent.com/6418354/179013343-3111f55a-3b90-40c7-8487-9777348672b0.png)](https://www.tumblr.com/share?v=3&u=https://github.com/p32929/PaGeHa/)
-[![pocket](https://user-images.githubusercontent.com/6418354/179013334-b095c45f-becf-49f4-9ee1-5a731a9b1f85.png)](https://getpocket.com/save?url=https://github.com/p32929/PaGeHa/)
-[![pinterest](https://user-images.githubusercontent.com/6418354/179013331-44cd9206-11b1-4b65-becb-5863b61c828f.png)](https://pinterest.com/pin/create/button/?url=https://github.com/p32929/PaGeHa/)
-[![reddit](https://user-images.githubusercontent.com/6418354/179013338-7416ae3f-73ba-4522-86e1-1374d7082d22.png)](https://www.reddit.com/submit?url=https://github.com/p32929/PaGeHa/)
-[![linkedin](https://user-images.githubusercontent.com/6418354/179013327-ca7b7102-1da8-4b1c-858f-1a6e5f21bd70.png)](https://www.linkedin.com/shareArticle?mini=true&url=https://github.com/p32929/PaGeHa/)
-[![whatsapp](https://user-images.githubusercontent.com/6418354/179013353-f477fa0b-3e6f-4138-a357-c9991b23ff88.png)](https://api.whatsapp.com/send?text=https://github.com/p32929/PaGeHa/)
+## Support
+
+<a href="https://p32929.github.io/support/"><img src="https://p32929.github.io/readme/support.svg" alt="If you like my works and want to support me, feel free to support" width="420"></a>
